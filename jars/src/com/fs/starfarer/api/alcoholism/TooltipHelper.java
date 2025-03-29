@@ -4,6 +4,7 @@ import com.fs.starfarer.api.alcoholism.listeners.AlcoholConsumptionManager;
 import com.fs.starfarer.api.alcoholism.memory.AddictionBrain;
 import com.fs.starfarer.api.alcoholism.memory.Alcohol;
 import com.fs.starfarer.api.alcoholism.memory.AlcoholRepo;
+import com.fs.starfarer.api.alcoholism.memory.SettingsHandler;
 import com.fs.starfarer.api.util.Pair;
 
 import java.awt.*;
@@ -39,11 +40,11 @@ public class TooltipHelper {
 
     public static int getPredictedAmountRequiredForOneMonth(String id){
         Alcohol alcohol = AlcoholRepo.get(id);
-        float addictionInOneMonth = getFutureAddictionAfterDaysPassed(alcohol, AddictionBrain.DAYS_PER_MONTH);
+        float addictionInOneMonth = getFutureAddictionAfterDaysPassed(alcohol, SettingsHandler.getInstance().daysPerMonth);
         float consumptionInOneMonth = AddictionBrain.getConsumptionPerCrewPerDayForAddiction(addictionInOneMonth);
         float crewAmt = AlcoholConsumptionManager.getPlayerSkeletonCrewAmount();
 
-        return (int) Math.ceil(consumptionInOneMonth * crewAmt * AddictionBrain.DAYS_PER_MONTH);
+        return (int) Math.ceil(consumptionInOneMonth * crewAmt * SettingsHandler.getInstance().daysPerMonth);
     }
 
     public static float getFutureAddictionAfterDaysPassed(Alcohol alcohol, float days){

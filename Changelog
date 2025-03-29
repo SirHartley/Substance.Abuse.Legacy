@@ -7,9 +7,7 @@ Special thanks to: Avanitia, SilverLight
 
 1.1.d
 Added - Icon
-Added - LunaSettings
-
-
+Adjusted - Moved all settings to LunaLib
 Fixed - Rare crash with certain industries
 Fixed - Sweet Freedom now correctly reduces sensor profile instead of increasing it
 Fixed - Sweet Freedom now properly reduces market Tariffs instead of increasing them

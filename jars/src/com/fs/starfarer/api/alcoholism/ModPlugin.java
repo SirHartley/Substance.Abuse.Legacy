@@ -7,10 +7,7 @@ import com.fs.starfarer.api.alcoholism.industry.BreweryPlacer;
 import com.fs.starfarer.api.alcoholism.listeners.AlcoholConsumptionManager;
 import com.fs.starfarer.api.alcoholism.listeners.AlcoholStackReplacer;
 import com.fs.starfarer.api.alcoholism.listeners.ResourceConditionApplicator;
-import com.fs.starfarer.api.alcoholism.memory.AddictionMemory;
-import com.fs.starfarer.api.alcoholism.memory.Alcohol;
-import com.fs.starfarer.api.alcoholism.memory.AlcoholRepo;
-import com.fs.starfarer.api.alcoholism.memory.FactionAlcoholHandler;
+import com.fs.starfarer.api.alcoholism.memory.*;
 import com.fs.starfarer.api.alcoholism.scripts.CargoUIOpenChecker;
 import com.fs.starfarer.api.alcoholism.scripts.NewDayTracker;
 import com.fs.starfarer.api.alcoholism.scripts.RefitUIOpenChecker;
@@ -35,6 +32,7 @@ public class ModPlugin extends BaseModPlugin {
         RefitUIOpenChecker.register();
 
         //alcohol functionality
+        SettingsHandler.getInstance().settingsChanged("alcoholism");
         AddictionMemory.getInstanceOrRegister().refresh();
         AlcoholStackReplacer.register();
         AlcoholConsumptionManager.getInstanceOrRegister();
@@ -53,7 +51,7 @@ public class ModPlugin extends BaseModPlugin {
     public static void devActions(){
         CargoAPI c = Global.getSector().getPlayerFleet().getCargo();
         for (Alcohol alcohol : AlcoholRepo.ALCOHOL_MAP.values()){
-            c.addCommodity(alcohol.getCommodityId(), 100);
+            c.addCommodity(alcohol.getCommodityId(), 50);
         }
 
         for (String a : AlcoholRepo.ALCOHOL_MAP.keySet()){

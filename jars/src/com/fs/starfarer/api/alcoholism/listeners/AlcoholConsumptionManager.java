@@ -116,7 +116,7 @@ public class AlcoholConsumptionManager implements NewDayListener, RefitTabListen
         reapply();
 
         //if all alcohols are consumed at once, this will take less than three days.
-        if(memory.getTotaladdictionGainLastMonth() >= AddictionBrain.MONTHLY_ADDICTION_GAIN_LIMIT_BEFORE_BLACKOUT){
+        if(memory.getTotaladdictionGainLastMonth() >= SettingsHandler.getInstance().monthlyAddictionGainLimitBeforeBlackout){
             BlackoutScript.register();
             AddictionMemory.getInstanceOrRegister().resetAddictionMap();
         }
@@ -162,7 +162,7 @@ public class AlcoholConsumptionManager implements NewDayListener, RefitTabListen
     }
 
     public float getWaterMult(){
-        return AlcoholRepo.get(AlcoholRepo.WATER).getAddictionStatus().getAddictionValue() * AddictionBrain.WATER_MULT;
+        return AlcoholRepo.get(AlcoholRepo.WATER).getAddictionStatus().getAddictionValue() * SettingsHandler.getInstance().waterMult;
     }
 
     public boolean isConsumingWater(){
