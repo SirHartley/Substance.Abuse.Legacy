@@ -1,4 +1,16 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
 alcoholism_header1,General,Header,General,,,,,General
-alcoholism_,Show Trade Indicators,Boolean,TRUE,,Show price / Shortage / Excess indicators in the market screens,,,General
-alcoholism_,Low Impact Mode,Boolean,FALSE,,Setting this to true makes the mod much less intrusive - showing indicators only when excess or shortage exists and forgoing quantity indication and price guides. Set it to true if you think there is too much stuff happening on your market screen.,,,General
+alcoholism_CREW_PER_UNIT_PER_MONTH,"Crew per unit of alcohol, per month",double,25,,how many crew one unit of alcohol can feed - more = crew will consume less alcohol per month.,1,100,General
+alcoholism_BASE_ADDICTION_GAIN_PER_DAY,Addiction gain per day,double,0.005,,the base of how fast addiction builds. Changing this by 0.001 can have a large impact. More = faster addiction.,0.001,0.01,General
+alcoholism_MONTHLY_ADDICTION_GAIN_LIMIT_BEFORE_BLACKOUT,Monthly addiction gain limit,double,1,,how fast you black out. more = you can consume more alcohol simultaneusly.,0.5,10,General
+alcoholism_WATER_MULT,Water Mult,double,0.5,,how much water increases or decreases addiction gain/loss. will crash unless 0.01 > x <0.99.,0.02,0.98,General
+alcoholism_ADJUST_OP_WHEN_OVER_LIMIT,OP adjustment,Boolean,TRUE,,"Your ships might be over the OP limit when using absynth and going into withdrawal - this auto-adjusts your loadouts. 
+Note that absynth will become dumb OP if you disable it and do not fix your loadouts yourself after withdrawal.
+
+some people had issues with UNGP mod interactions - disabling this setting should be a last resort
+also if you disable this the beard gods will make your beard spotty and rough",,,General
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
