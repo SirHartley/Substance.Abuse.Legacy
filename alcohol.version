@@ -13,5 +13,5 @@
         "directDownloadURL":"https://github.com/SirHartley/Substance.Abuse/releases/download/1.1.e/Substance.Abuse1.1.e.zip",
 
         #Link towards a directly accessible text file, which can be used to display a changelog ingame, is fetched from the online version file.
-        "changelogURL":"https://github.com/SirHartley/Substance.Abuse/blob/master/Changelog",
+        "changelogURL":"https://raw.githubusercontent.com/SirHartley/Substance.Abuse/refs/heads/master/Changelog",
 }
